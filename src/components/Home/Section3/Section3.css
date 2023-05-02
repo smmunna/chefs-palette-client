@@ -1,0 +1,27 @@
+.sec3 {
+    background-color: antiquewhite;
+    padding: 100px;
+
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+}
+
+.sec3-sub-bg img {
+    border: 5px solid red;
+    border-radius: 22px;
+}
+
+/* Responsive Design */
+
+@media screen and (max-width:576px) {
+    .sec3 {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .se3-right {
+        margin-top: 20px;
+    }
+
+}
