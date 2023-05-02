@@ -5,12 +5,12 @@ import Likes from '../../../assets/icons/likes.png';
 const ChefCard = ({ chef }) => {
     const { id, name, picture, likes, recipes, years_of_experience } = chef;
     return (
-        <div class="col">
-            <div class="card h-100">
-                <img src={picture} class="card-image card-img-top img-fluid" alt="..." />
-                <div class="card-body">
-                    <h5 class="card-title">{name}</h5>
-                    <p class="card-text">Number of recipes: {recipes.length}</p>
+        <div className="col">
+            <div className="card h-100">
+                <img src={picture} className="card-image card-img-top img-fluid" alt="..." />
+                <div className="card-body">
+                    <h5 className="card-title">{name}</h5>
+                    <p className="card-text">Number of recipes: {recipes.length}</p>
                     <div className='chef-priority'>
                         <div>
                             <p>Expericence: {years_of_experience} year's</p>
