@@ -5,7 +5,6 @@ import HomeHeader from './HomeHeader/HomeHeader';
 const Home = () => {
     return (
         <div>
-            <h3>I am from Home</h3>
             <HomeHeader/>
         </div>
     );

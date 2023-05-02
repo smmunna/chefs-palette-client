@@ -1,56 +1,66 @@
-import React, { useRef, useState } from 'react';
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import React from 'react';
 import './HomeHeader.css';
-// import required modules
-import { Autoplay, Pagination, Navigation } from 'swiper';
-
-
 
 const HomeHeader = () => {
-    const progressCircle = useRef(null);
-    const progressContent = useRef(null);
-    const onAutoplayTimeLeft = (s, time, progress) => {
-      progressCircle.current.style.setProperty('--progress', 1 - progress);
-      progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
-    };
+
     return (
-        <div>
-             <Swiper
-        spaceBetween={30}
-        centeredSlides={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        onAutoplayTimeLeft={onAutoplayTimeLeft}
-        className="mySwiper"
-      >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-        <div className="autoplay-progress" slot="container-end">
-          <svg viewBox="0 0 48 48" ref={progressCircle}>
-            <circle cx="24" cy="24" r="20"></circle>
-          </svg>
-          <span ref={progressContent}></span>
-        </div>
-      </Swiper>
+        <div class="section2-carosoul">
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="carosoul-items1">
+                            <div class="carosoul-comment-profile">
+                                <img src="images/profile.png" class="img-fluid" alt=""/>
+                            </div>
+                            <div class="carosoul-heading display-3 fw-bold"> Welcome to Chef's Palette</div>
+                            <div class="carosoul-description">
+                            Experience a gastronomic journey like no other with our world-class cuisine. Our expert chefs combine the freshest ingredients and innovative techniques to create dishes that will tantalize your taste buds.                          </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carosoul-items2">
+                            <div class="carosoul-comment-profile">
+                                <img src="images/profile.png" class="img-fluid" alt="" />
+                            </div>
+                            <div class="carosoul-heading display-3 fw-bold">Explore Our Chef with Quality</div>
+                            <div class="carosoul-description">
+                            Experience a gastronomic journey like no other with our world-class cuisine. Our expert chefs combine the freshest ingredients and innovative techniques to create dishes that will tantalize your taste buds.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carosoul-items3">
+                            <div class="carosoul-comment-profile">
+                                <img src="images/profile.png" class="img-fluid" alt="" />
+                            </div>
+                            <div class="carosoul-heading display-3 fw-bold">Discover our Exquisite Menu</div>
+                            <div class="carosoul-description">
+                            Experience a gastronomic journey like no other with our world-class cuisine. Our expert chefs combine the freshest ingredients and innovative techniques to create dishes that will tantalize your taste buds.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <i class="fa-solid fa-circle-chevron-left"></i>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </div>
     );
 }
