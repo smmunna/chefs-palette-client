@@ -1,0 +1,11 @@
+.sec4{
+    padding: 50px 100px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.961), rgba(0, 0, 0, 0.3)), url("https://images.pexels.com/photos/11161431/pexels-photo-11161431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") center/cover no-repeat;
+    color: white;
+}
+
+@media screen and (max-width:576px) {
+    .sec4{
+        padding: 50px 20px ;
+    }
+}
