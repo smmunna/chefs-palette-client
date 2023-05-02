@@ -7,7 +7,7 @@ const ChefCard = ({ chef }) => {
     return (
         <div class="col">
             <div class="card h-100">
-                <img src={picture} class="card-img-top img-fluid" alt="..." />
+                <img src={picture} class="card-image card-img-top img-fluid" alt="..." />
                 <div class="card-body">
                     <h5 class="card-title">{name}</h5>
                     <p class="card-text">Number of recipes: {recipes.length}</p>
