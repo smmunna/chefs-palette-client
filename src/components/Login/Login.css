@@ -1,0 +1,46 @@
+.login{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+.login-image img{
+     height: 45vw;
+     width: 100%;
+}
+
+/* Styling the Input Field */
+.form-control{
+    border: 1px solid rgba(0, 0, 0, 0.185);
+}
+.form-control:focus{
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.185);
+}
+
+.github, .google{
+    border: 1px solid rgba(212, 129, 41, 0.507);
+    padding: 10px;
+    margin-bottom: 5px;
+    transition: all 1s;
+}
+.github>span,.google>span{
+    cursor: pointer;
+}
+
+.github:hover,.google:hover{
+    background-color: rgb(222, 236, 249);
+}
+
+.sublink{
+    font-size: 16px;
+    color: blue;
+    text-decoration: underline;
+}
+
+
+@media screen and (max-width:576px) {
+    .login{
+        flex-direction: column;
+    }
+}

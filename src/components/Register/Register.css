@@ -1,0 +1,9 @@
+.form-control{
+    width: 400px;
+}
+
+@media screen and (max-width:576px) {
+    .form-control{
+        width: 300px;
+    }
+}
