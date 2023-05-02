@@ -1,6 +1,7 @@
 import React from 'react';
 import './ChefCard.css';
 import Likes from '../../../assets/icons/likes.png';
+import { Link } from 'react-router-dom';
 
 const ChefCard = ({ chef }) => {
     const { id, name, picture, likes, recipes, years_of_experience } = chef;
@@ -21,7 +22,7 @@ const ChefCard = ({ chef }) => {
                     </div>
                     {/* View Chef */}
                     <div>
-                        <button className='btn btn-warning mt-2'>View Recipes</button>
+                        <Link to={`/chefrecipe/${id}`}><button className='btn btn-warning mt-2'>View Recipes</button></Link>
                     </div>
                 </div>
             </div>
