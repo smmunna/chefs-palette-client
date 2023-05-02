@@ -3,8 +3,10 @@ import './Header.css';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import BrandIcon from '../../assets/icons/brandicon.png';
+import ActiveLink from '../ActiveLink/ActiveLink';
 
 const Header = () => {
+
     return (
         <div className='navbar-bg'>
             <Navbar collapseOnSelect expand="lg">
@@ -15,15 +17,17 @@ const Header = () => {
                         height="40"
                         alt="React Bootstrap logo"
                     />
-                    <Navbar.Brand href="#home" className='ms-2 brand'>Chef's Palette</Navbar.Brand>
+                    <Navbar.Brand className='ms-2 brand'>Chef's Palette</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto">
+                            
+                                <Nav.Link>
+                                    <ActiveLink to="/">Home</ActiveLink>
+                                </Nav.Link>
+                           
                             <Nav.Link>
-                                <Link to="/">Home</Link>
-                            </Nav.Link>
-                            <Nav.Link>
-                                <Link to="/blog">Blog</Link>
+                                <ActiveLink to="/blog" >Blog</ActiveLink>
                             </Nav.Link>
                         </Nav>
                         <Nav>
