@@ -1,0 +1,30 @@
+/* Styling the Links color in the Header Page */
+a{
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+a:hover{
+    color: black;
+}
+
+/* Navbar background */
+.navbar-bg{
+    background-color: aliceblue;
+    padding: 10px 0px;
+}
+.brand{
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(4, 122, 4);
+}
+.navbar-toggler{
+    border: 1px solid aliceblue;
+    transition: all 1s;
+}
+.navbar-toggler:hover{
+    border: 1px solid rgb(4, 122, 4);
+}
+.navbar-toggler:focus{
+    box-shadow: none;
+}
