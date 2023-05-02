@@ -1,5 +1,6 @@
 import React from 'react';
 import './ChefCard.css';
+import Likes from '../../../assets/icons/likes.png';
 
 const ChefCard = ({ chef }) => {
     const { id, name, picture, likes, recipes, years_of_experience } = chef;
@@ -12,10 +13,10 @@ const ChefCard = ({ chef }) => {
                     <p class="card-text">Number of recipes: {recipes.length}</p>
                     <div className='chef-priority'>
                         <div>
-                            <p>Expericence: {years_of_experience}</p>
+                            <p>Expericence: {years_of_experience} year's</p>
                         </div>
-                        <div>
-                            Likes {likes}
+                        <div className='d-flex align-items-center gap-2 '>
+                            <img src={Likes} height={20} alt="" /> {likes}
                         </div>
                     </div>
                     {/* View Chef */}
