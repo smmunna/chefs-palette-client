@@ -65,6 +65,11 @@
  1. In the blog page i've given answer of those four questions as per Assignment Requirements
  
  2. At the top of the page i've added **Print this Article** button that will create a pdf. You can save it and print it.
+ 
+### Blog Page Output
+ 
+ ![image](https://user-images.githubusercontent.com/64527538/236000444-a3e67ca3-0ade-408c-82f9-dfe882a3b011.png)
+
 
 -------------------------------------
 
@@ -72,7 +77,7 @@
 `And others all the functionality works properly` <br>
 **Kindness is like snow- It beautifies everything it covers.** ♥⌚ <br>
 
-> Minhazul Abedin Munna
+> Minhazul Abedin Munna <br>
 >DATE:05 MAY 2023, 11:40PM
 
 
