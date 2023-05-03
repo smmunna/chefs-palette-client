@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import LoginImage from '../../assets/images/login.jpg';
 import './Login.css';
 import Google from '../../assets/icons/google.png';
@@ -8,11 +8,32 @@ import { AuthContext } from '../../provider/AuthProvider';
 
 const Login = () => {
     // creating the hooks for redirect to other page;
+    const [loginUser, setLoginUser] = useState(null)
+    const [loginError, setLoginError] = useState('');
     const navigate = useNavigate()
     const location = useLocation()
 
-    const { googleSignIn, user, error, loading } = useContext(AuthContext);
+    const { googleSignIn, user, loading, userLogin } = useContext(AuthContext);
 
+    // Handle Login information;
+    const handleLoginForm = (event) => {
+        event.preventDefault();
+
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        userLogin(email, password)
+            .then(result => {
+                const user = result.user;
+
+            })
+            .catch(error => {
+                const errorMessage = 'Invalid Useremail/Password';
+                setLoginError(errorMessage)
+            })
+    }
+    // Cheking whether the user is correct or not
     // Getting the exact path;
     let from = location.state?.from?.pathname || "/";
 
@@ -26,8 +47,9 @@ const Login = () => {
     return (
         <div className='login container'>
             <div>
-                <form>
+                <form onSubmit={handleLoginForm}>
                     <h3>Please Login</h3>
+                    <p>{loginError ? <span className='text-danger fw-bold fs-5'>{loginError}</span> : ''}</p>
                     <hr />
                     <div className="mb-3">
                         <label for="exampleInputEmail1" className="form-label">Email address</label>
