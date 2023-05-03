@@ -4,39 +4,51 @@ import RegisterImage from '../../assets/images/register.jpg';
 import { AuthContext } from '../../provider/AuthProvider';
 
 const Register = () => {
-    const{createUser} = useContext(AuthContext)
-    const[error,setError] = useState(null)
+    const { createUser } = useContext(AuthContext)
+    const [error, setError] = useState(null)
+    const [urlerror, setUrlError] = useState(null)
 
     // Form Submission;
-    const handleFormSubmit = (event) =>{
-            event.preventDefault()
-            
-            // Getting value from the form
-            const form = event.target;
-            const displayName = form.displayName.value;
-            const email = form.email.value;
-            const password = form.password.value;
+    const handleFormSubmit = (event) => {
+        event.preventDefault()
 
-            // createUser(email,password)
-            if(password.length<6){
-                const errorMessage = "Password Length Must be 6 character Long !"
-                setError(errorMessage);
-                return
-            }
-            else if(!/(?=.*[A-Z].*[A-Z])/.test(password)){
-                const errorMessage = "Add At least two Uppercase !"
-                setError(errorMessage);
-                return
-            }
-            else if(!/(?=.*[!@#$&*])/.test(password)){
-                const errorMessage = "Add At least One Special Character (!@#&*) !"
-                setError(errorMessage);
-                return
-            }
-            else{
-                setError('')
-            }
-           
+        // Getting value from the form
+        const form = event.target;
+        const displayName = form.displayName.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const photoURL = form.photoURL.value;
+
+        // createUser(email,password)
+        if (password.length < 6) {
+            const errorMessage = "Password Length Must be 6 character Long !"
+            setError(errorMessage);
+            return
+        }
+        else if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
+            const errorMessage = "Add At least two Uppercase !"
+            setError(errorMessage);
+            return
+        }
+        else if (!/(?=.*[!@#$&*])/.test(password)) {
+            const errorMessage = "Add At least One Special Character (!@#&*) !"
+            setError(errorMessage);
+            return
+        }
+        else {
+            setError('')
+        }
+
+        // Photo URL validation;
+        if (!/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/.test(photoURL)) {
+            const errorMessage = "Url is not in the correct format..!"
+            setUrlError(errorMessage);
+            return
+        }
+        else {
+            setUrlError('')
+        }
+
     }
 
     return (
@@ -47,20 +59,21 @@ const Register = () => {
                     <hr />
                     <div className="mb-3">
                         <label for="exampleInputEmail1" className="form-label">Name</label>
-                        <input type="text" name='displayName' className="form-control"  required />
+                        <input type="text" name='displayName' className="form-control" required />
                     </div>
                     <div className="mb-3">
                         <label for="exampleInputEmail1" className="form-label">Email address</label>
-                        <input type="email" name='email' className="form-control"  required />
+                        <input type="email" name='email' className="form-control" required />
                     </div>
                     <div className="mb-3">
                         <label for="exampleInputPassword1" className="form-label">Password</label>
-                        <input type="password" name='password' className="form-control"  required />
-                        {error?<p className='text-danger mt-2'>{error}</p>:''}
+                        <input type="password" name='password' className="form-control" required />
+                        {error ? <p className='text-danger mt-2'>{error}</p> : ''}
                     </div>
                     <div className="mb-3">
                         <label for="exampleInputEmail1" className="form-label">Photo URL</label>
-                        <input type="text" name='photoURL' className="form-control"   required />
+                        <input type="text" name='photoURL' className="form-control" required />
+                        {urlerror ? <p className='text-danger mt-2'>{urlerror}</p> : ''}
                     </div>
                     <button type="submit" className="btn btn-success">Register</button>
                 </form>
