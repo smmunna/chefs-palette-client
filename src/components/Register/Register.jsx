@@ -74,7 +74,7 @@ const Register = () => {
     }
 
     return (
-        <div className='login container'>
+        <div className='login container mt-3 mt-md-0'>
             <div>
                 <form onSubmit={handleFormSubmit}>
                     <h3>Please Register as New</h3>
