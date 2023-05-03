@@ -1,4 +1,5 @@
 # chefs-palette-client
+  >Live Site Link : https://chef-s-palette-auth.web.app/
 
 ## Home Page
 1. Contains the Header
