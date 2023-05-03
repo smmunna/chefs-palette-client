@@ -3,19 +3,23 @@ import LoginImage from '../../assets/images/login.jpg';
 import './Login.css';
 import Google from '../../assets/icons/google.png';
 import Github from '../../assets/icons/github.png';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 
 const Login = () => {
     // creating the hooks for redirect to other page;
     const navigate = useNavigate()
+    const location = useLocation()
 
     const { googleSignIn, user, error, loading } = useContext(AuthContext);
+
+    // Getting the exact path;
+    let from = location.state?.from?.pathname || "/";
 
     // Redirecting to other page;
     useEffect(() => {
         if (!loading && user) {
-            navigate("/")
+            navigate(from, { replace: true })
         }
     }, [user])
 

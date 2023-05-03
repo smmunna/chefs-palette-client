@@ -8,6 +8,7 @@ import Register from "../components/Register/Register";
 import Error from "../components/Error/Error";
 import ChefRecipe from "../components/ChefRecipe/ChefRecipe";
 import UserProfile from "../components/UserProfile/UserProfile";
+import PrivateRoute from "../privateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/profile",
-                element: <UserProfile />
+                element: <PrivateRoute><UserProfile /></PrivateRoute>
             },
             {
                 path: "/register",
@@ -41,7 +42,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/chefrecipe/:id",
-                element: <ChefRecipe />,
+                element: <PrivateRoute><ChefRecipe /></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://chefs-palette-server.vercel.app/chefs/chef/${params.id}`)
 
             },
