@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactStars from "react-rating-stars-component";
+
 import Favorite from '../../../assets/icons/favourite.png';
+import { ToastContainer, toast } from 'react-toastify';
 
 const SingleChef = ({ recipe }) => {
     const { name, ingredients, method, rating } = recipe;
-    const ratingChanged = (newRating) => {
-        console.log(newRating);
-    };
+    const[favourite,setFavorite]=useState(false)
+    const handleFavorite = () =>{
+        setFavorite(!favourite)
+        toast(`You marked '${name}' as your favorite recipe.`,{
+            position:"bottom-right"
+        })
+    }
+  
     return (
         <div class="col">
             <div class="card h-100">
@@ -39,10 +46,11 @@ const SingleChef = ({ recipe }) => {
                         </ol>
                     </p>
                     <div className='my-5'>
-                        <button className='btn btn-danger' style={{ position: "absolute", bottom: "0" }}> <img src={Favorite} height={35} alt="" /> Add to Favorite</button>
+                        <button className='btn btn-danger' onClick={handleFavorite} disabled={favourite?true:false} style={{ position: "absolute", bottom: "0" }}> <img src={Favorite} height={35} alt="" /> Add to Favorite</button>
                     </div>
                 </div>
             </div>
+            <ToastContainer/>
         </div>
     );
 }
