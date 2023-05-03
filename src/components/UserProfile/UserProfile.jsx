@@ -21,7 +21,7 @@ const UserProfile = () => {
                     </div>
                     <div className='mt-3'>
                         <p>Name: {user.displayName}</p>
-                        <p>Email: {user?.email} <span>{user.emailVerified ? <><img src={Verified} height={20} alt="" /><span  className='text-success fw-bold'>Verified</span></> : <><span className='text-danger fw-bold'>Not Verified</span></>}</span></p>
+                        <p>Email: {user?.email} <span>{user.emailVerified ? <><img src={Verified} height={20} alt="" title='Verified' /></> : <><span className='text-danger fw-bold'>Not Verified</span></>}</span></p>
                         <p>Phone: {user.phoneNumber ? user.phoneNumber : 'Not Found'}</p>
                     </div>
                 </div>
