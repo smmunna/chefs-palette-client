@@ -6,14 +6,14 @@ import { ToastContainer, toast } from 'react-toastify';
 
 const SingleChef = ({ recipe }) => {
     const { name, ingredients, method, rating } = recipe;
-    const[favourite,setFavorite]=useState(false)
-    const handleFavorite = () =>{
+    const [favourite, setFavorite] = useState(false)
+    const handleFavorite = () => {
         setFavorite(!favourite)
-        toast(`You marked '${name}' as your favorite recipe.`,{
-            position:"bottom-right"
+        toast(`You marked '${name}' as your favorite recipe.`, {
+            position: "bottom-right"
         })
     }
-  
+
     return (
         <div class="col">
             <div class="card h-100">
@@ -23,17 +23,17 @@ const SingleChef = ({ recipe }) => {
                     <p class="card-text">Method: {method}</p>
                     <p>Rating: {rating}
                         <span>
-                        <ReactStars
-                            count={5}
-                            value={rating}
-                            edit={false}
-                            size={24}
-                            isHalf={true}
-                            emptyIcon={<i className="far fa-star"></i>}
-                            halfIcon={<i className="fa fa-star-half-alt"></i>}
-                            fullIcon={<i className="fa fa-star"></i>}
-                            activeColor="#ffd700"
-                        />
+                            <ReactStars
+                                count={5}
+                                value={rating}
+                                edit={false}
+                                size={24}
+                                isHalf={true}
+                                emptyIcon={<i className="far fa-star"></i>}
+                                halfIcon={<i className="fa fa-star-half-alt"></i>}
+                                fullIcon={<i className="fa fa-star"></i>}
+                                activeColor="#ffd700"
+                            />
                         </span>
                     </p>
 
@@ -46,11 +46,11 @@ const SingleChef = ({ recipe }) => {
                         </ol>
                     </p>
                     <div className='my-5'>
-                        <button className='btn btn-danger' onClick={handleFavorite} disabled={favourite?true:false} style={{ position: "absolute", bottom: "0" }}> <img src={Favorite} height={35} alt="" /> Add to Favorite</button>
+                        <button className='btn btn-danger' onClick={handleFavorite} disabled={favourite ? true : false} style={{ position: "absolute", bottom: "0" }}> <img src={Favorite} height={35} alt="" /> Add to Favorite</button>
                     </div>
                 </div>
             </div>
-            <ToastContainer/>
+            <ToastContainer />
         </div>
     );
 }

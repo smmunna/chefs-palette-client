@@ -16,8 +16,8 @@ const ChefRecipe = () => {
             {/* Chefs Details Card */}
             <div className='d-flex justify-content-center my-3'>
                 <div>
-                <h3 className='display-5 fw-semibold my-4 text-center'>Chef's Details</h3>
-                <hr />
+                    <h3 className='display-5 fw-semibold my-4 text-center'>Chef's Details</h3>
+                    <hr />
                     <div className='chef-image text-center'>
                         <Image src={picture} className='img-fluid' />
                     </div>
@@ -31,19 +31,19 @@ const ChefRecipe = () => {
                     <hr />
                 </div>
             </div>
-                <div className="text-center">
-                    <h3 className="display-5 fw-semibold">{name}'s Recipes Collection</h3>
-                    <hr />
-                </div>
+            <div className="text-center">
+                <h3 className="display-5 fw-semibold">{name}'s Recipes Collection</h3>
+                <hr />
+            </div>
 
             {/* Next Card */}
             <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
-                    {
-                        recipes.map(recipe=><SingleChef 
+                {
+                    recipes.map(recipe => <SingleChef
                         key={recipe.name}
                         recipe={recipe}
-                        />)
-                    }
+                    />)
+                }
             </div>
         </div>
     );

@@ -3,7 +3,7 @@ import './Section4.css';
 
 const Section4 = () => {
     return (
-        <div>
+        <div className='my-5'>
             <div className='sec4'>
                 <h3 className="display-4 fw-semibold">Restaurant Consulting Services</h3>
                 <p className="mt-3 mt-md-4">Alanzo, along with his team, offers culinary and management services. We have the experience to provide <br /> concept development strategies and best practice principles in order to achieve maximum sales performance.</p>

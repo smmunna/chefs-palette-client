@@ -16,33 +16,33 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />,
-                loader:()=>fetch('http://localhost:5000/chefs/all')
+                loader: () => fetch('https://chefs-palette-server.vercel.app/chefs/all')
             },
             {
-                path:"/blog",
-                element:<Blog/>
+                path: "/blog",
+                element: <Blog />
             },
             {
-                path:"/user",
-                element:<User/>
+                path: "/user",
+                element: <User />
             },
             {
-                path:"/login",
-                element:<Login/>
+                path: "/login",
+                element: <Login />
             },
             {
-                path:"/register",
-                element:<Register/>
+                path: "/register",
+                element: <Register />
             },
             {
-                path:"/chefrecipe/:id",
-                element:<ChefRecipe/>,
-                loader:({params})=>fetch(`http://localhost:5000/chefs/chef/${params.id}`)
+                path: "/chefrecipe/:id",
+                element: <ChefRecipe />,
+                loader: ({ params }) => fetch(`https://chefs-palette-server.vercel.app/chefs/chef/${params.id}`)
 
             },
             {
-                path:"*",
-                element:<Error/>
+                path: "*",
+                element: <Error />
             }
         ]
     },
