@@ -5,7 +5,7 @@ import './UserProfile.css';
 
 const UserProfile = () => {
     const { user, loading } = useContext(AuthContext)
-    console.log(user)
+    
     if (loading) {
         return <span></span>
     }
