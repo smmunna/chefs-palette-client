@@ -3,14 +3,16 @@ import './Header.css';
 import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import BrandIcon from '../../assets/icons/brandicon.png';
+import Spinner from '../../assets/icons/spinner.jpg';
 import ActiveLink from '../ActiveLink/ActiveLink';
 import { AuthContext } from '../../provider/AuthProvider';
+
 
 const Header = () => {
     const { user, loading, signOutGoogle } = useContext(AuthContext)
 
     if (loading) {
-        return <span>Loading...</span>
+        return <></>
     }
 
     return (
@@ -41,7 +43,7 @@ const Header = () => {
                                 <>
 
                                     <Nav>
-                                        <Link>
+                                        <Link to="/profile">
                                             <Image src={user.photoURL} alt="Munna" height={40} roundedCircle title='Go to Profile' />
                                         </Link>
                                         <Button className='btn btn-warning ms-3' onClick={signOutGoogle}>Logout</Button>

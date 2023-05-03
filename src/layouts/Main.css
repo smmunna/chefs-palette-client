@@ -1,0 +1,10 @@
+.spinner{
+    margin-top: 16%;
+}
+
+@media screen and (max-width:576px) {
+    .spinner{
+        margin-top: 50%;
+    }
+    
+}
