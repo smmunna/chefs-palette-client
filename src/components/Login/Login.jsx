@@ -1,14 +1,23 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import LoginImage from '../../assets/images/login.jpg';
 import './Login.css';
 import Google from '../../assets/icons/google.png';
 import Github from '../../assets/icons/github.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 
 const Login = () => {
-    const{googleSignIn,user,error}=useContext(AuthContext);
-    console.log(user)
+    // creating the hooks for redirect to other page;
+    const navigate = useNavigate()
+
+    const{googleSignIn,user,error,loading}=useContext(AuthContext);
+    
+    // Redirecting to other page;
+    useEffect(()=>{
+        if(!loading && user){
+            navigate("/")
+        }
+    },[user])
 
     return (
         <div className='login container'>
