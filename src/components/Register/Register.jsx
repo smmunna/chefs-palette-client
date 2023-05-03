@@ -1,15 +1,15 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Register.css';
 import RegisterImage from '../../assets/images/register.jpg';
 import { AuthContext } from '../../provider/AuthProvider';
 import { useNavigate } from 'react-router-dom';
+
 
 const Register = () => {
     const { createUser, userUpdate } = useContext(AuthContext)
     const [error, setError] = useState(null)
     const [urlerror, setUrlError] = useState(null)
     const navigate = useNavigate()
-    const [user, setUser] = useState(null)
 
 
     // Form Submission;
@@ -59,13 +59,11 @@ const Register = () => {
                 const user = result.user;
                 // After Creating the user we need to call userUpdate;
                 userUpdate(user, displayName, photoURL)
+
             })
             .catch(regerror => {
                 const error = regerror.errorMessage;
             })
-
-        // Update user name and photoUrl
-
 
         // After registraation go to home;
         navigate('/')
@@ -87,7 +85,7 @@ const Register = () => {
                     </div>
                     <div className="mb-3">
                         <label for="exampleInputPassword1" className="form-label">Password</label>
-                        <input type="password" name='password' className="form-control" required />
+                        <input type="password" name='password' className="form-control" required placeholder='Hint- !AB1234' />
                         {error ? <p className='text-danger mt-2'>{error}</p> : ''}
                     </div>
                     <div className="mb-3">

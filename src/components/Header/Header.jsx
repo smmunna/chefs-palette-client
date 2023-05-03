@@ -10,7 +10,7 @@ import { AuthContext } from '../../provider/AuthProvider';
 const Header = () => {
     const { user, loading, signOutGoogle } = useContext(AuthContext)
 
-    if (loading) {
+    if (loading && !user) {
         return <></>
     }
 

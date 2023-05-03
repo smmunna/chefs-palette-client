@@ -1,7 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import app from '../firebase/firebase.config';
-import { useNavigate } from 'react-router-dom';
 
 // Creating Context
 export const AuthContext = createContext(null)
@@ -24,15 +23,15 @@ const AuthProvider = ({ children }) => {
                 Email/Password Authentication Provider
     --------------------------------------------------------------*/
     // Create user with email,password;
-    const createUser = (email,password) =>{
-        return createUserWithEmailAndPassword(auth,email,password);
+    const createUser = (email, password) => {
+        return createUserWithEmailAndPassword(auth, email, password);
     }
     // Update user name and image;
-    const userUpdate = (currentUser,displayName,photoURL) =>{
-       return updateProfile(currentUser,{
-        displayName:displayName,
-        photoURL:photoURL,
-       })
+    const userUpdate = (currentUser, displayName, photoURL) => {
+        return updateProfile(currentUser, {
+            displayName: displayName,
+            photoURL: photoURL,
+        })
     }
 
 
