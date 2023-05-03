@@ -45,7 +45,7 @@ const Header = () => {
                                         <Link to="/profile">
                                             <Image src={user.photoURL} alt="User" height={40} roundedCircle title='Go to Profile' />
                                         </Link>
-                                        <Button className='btn btn-warning ms-3' onClick={signOutGoogle}>Logout</Button>
+                                        <Button className='btn btn-warning ms-3 my-2 my-md-0' onClick={signOutGoogle}>Logout</Button>
                                     </Nav>
                                 </>
                                 :
