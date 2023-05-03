@@ -10,14 +10,14 @@ const Login = () => {
     // creating the hooks for redirect to other page;
     const navigate = useNavigate()
 
-    const{googleSignIn,user,error,loading}=useContext(AuthContext);
-    
+    const { googleSignIn, user, error, loading } = useContext(AuthContext);
+
     // Redirecting to other page;
-    useEffect(()=>{
-        if(!loading && user){
+    useEffect(() => {
+        if (!loading && user) {
             navigate("/")
         }
-    },[user])
+    }, [user])
 
     return (
         <div className='login container'>

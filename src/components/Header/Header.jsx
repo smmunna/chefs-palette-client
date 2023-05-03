@@ -3,7 +3,6 @@ import './Header.css';
 import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import BrandIcon from '../../assets/icons/brandicon.png';
-import Spinner from '../../assets/icons/spinner.jpg';
 import ActiveLink from '../ActiveLink/ActiveLink';
 import { AuthContext } from '../../provider/AuthProvider';
 

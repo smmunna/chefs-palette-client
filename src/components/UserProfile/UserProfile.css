@@ -1,15 +1,16 @@
-.userProfile{
+.userProfile {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.left-right{
+.left-right {
     margin: 20px;
     border: 1px solid rgba(199, 128, 20, 0.329);
     padding: 20px 20px;
 }
-.userimage{
+
+.userimage {
     border: 3px solid rgba(235, 0, 0, 0.386);
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }

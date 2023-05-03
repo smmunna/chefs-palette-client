@@ -4,7 +4,7 @@ import Footer from '../components/Footer/Footer';
 import { Outlet, ScrollRestoration } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import Spinner from '../assets/icons/spinner.jpg';
-import './Main.css'
+import './Main.css';
 
 const Main = () => {
     const { loading } = useContext(AuthContext)

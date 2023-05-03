@@ -20,9 +20,9 @@ const UserProfile = () => {
                         <img className='userimage' src={user.photoURL ? user.photoURL : 'Photo Not Found'} height={100} alt="" />
                     </div>
                     <div className='mt-3'>
-                    <p>Name: {user.displayName}</p>
-                    <p>Email: {user?.email} <span className='text-success fw-bold'>{user.emailVerified ? <><img src={Verified} height={20} alt="" /></> : 'Not Verified'}</span></p>
-                    <p>Phone: {user.phoneNumber ? user.phoneNumber : 'Not Found'}</p>
+                        <p>Name: {user.displayName}</p>
+                        <p>Email: {user?.email} <span className='text-success fw-bold'>{user.emailVerified ? <><img src={Verified} height={20} alt="" /></> : 'Not Verified'}</span></p>
+                        <p>Phone: {user.phoneNumber ? user.phoneNumber : 'Not Found'}</p>
                     </div>
                 </div>
             </div>

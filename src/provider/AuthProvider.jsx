@@ -14,7 +14,7 @@ const AuthProvider = ({ children }) => {
     // Declaring the states;
     const [user, setUser] = useState(null)
     const [error, setError] = useState(null)
-    const [loading,setLoading] = useState(true)
+    const [loading, setLoading] = useState(true)
 
     /*-----------------------------------------------------------
                 Google Provider
@@ -32,12 +32,12 @@ const AuthProvider = ({ children }) => {
             })
     }
 
-    const signOutGoogle = () =>{
+    const signOutGoogle = () => {
         signOut(auth).then(() => {
             // Sign-out successful.
-          }).catch((error) => {
+        }).catch((error) => {
             // An error happened.
-          });
+        });
     }
 
     /*-----------------------------------------------------------
@@ -45,15 +45,15 @@ const AuthProvider = ({ children }) => {
     --------------------------------------------------------------*/
 
     // Store the Signin user info
-    useEffect(()=>{
-        const unsubscribe = onAuthStateChanged(auth,currentUser=>{
-               setUser(currentUser);
-               setLoading(false)
-           })
-           return ()=>{
-               return unsubscribe();
-           }
-       },[])
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, currentUser => {
+            setUser(currentUser);
+            setLoading(false)
+        })
+        return () => {
+            return unsubscribe();
+        }
+    }, [])
 
     // All the components passed through this;
     const authInfo = {
