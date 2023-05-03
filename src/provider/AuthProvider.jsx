@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import app from '../firebase/firebase.config';
 
 // Creating Context
@@ -9,6 +9,8 @@ const auth = getAuth(app)
 
 // Google Provider
 const provider = new GoogleAuthProvider();
+// GIthub provider
+const githubProvider = new GithubAuthProvider();
 
 const AuthProvider = ({ children }) => {
     // Declaring the states;
@@ -35,15 +37,33 @@ const AuthProvider = ({ children }) => {
     }
 
     // Signin using Email & Password;
-    const userLogin = (email,password) =>{
-        return signInWithEmailAndPassword(auth,email,password)
+    const userLogin = (email, password) => {
+        return signInWithEmailAndPassword(auth, email, password)
     }
-
+    /*-----------------------------------------------------------
+                End of Email/Password Authentication Provider
+    --------------------------------------------------------------*/
 
 
 
     /*-----------------------------------------------------------
-                End of Email/Password Authentication Provider
+                Github  Provider
+    --------------------------------------------------------------*/
+
+    const githubLogin = () => {
+        signInWithPopup(auth, githubProvider)
+            .then(result => {
+                const user = result.user;
+                setUser(user)
+            })
+            .catch(error => {
+                const errorMessage = error.message;
+                setError(errorMessage)
+            })
+    }
+
+    /*-----------------------------------------------------------
+                End of Github Provider
     --------------------------------------------------------------*/
 
 
@@ -95,6 +115,7 @@ const AuthProvider = ({ children }) => {
         createUser,
         userUpdate,
         userLogin,
+        githubLogin,
         user,
         error,
         loading,

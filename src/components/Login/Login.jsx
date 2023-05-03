@@ -13,7 +13,7 @@ const Login = () => {
     const navigate = useNavigate()
     const location = useLocation()
 
-    const { googleSignIn, user, loading, userLogin } = useContext(AuthContext);
+    const { googleSignIn, githubLogin, user, loading, userLogin } = useContext(AuthContext);
 
     // Handle Login information;
     const handleLoginForm = (event) => {
@@ -69,7 +69,7 @@ const Login = () => {
                 </div>
                 <div className='text-center'>
                     <div className='google'><img src={Google} height={20} className='me-2' alt="" /><span onClick={googleSignIn}>Sign in with Google</span></div>
-                    <div className='github'><img src={Github} height={20} className='me-2' alt="" /><span>Sign in with Github</span></div>
+                    <div className='github'><img src={Github} height={20} className='me-2' alt="" /><span onClick={githubLogin}>Sign in with Github</span></div>
                 </div>
             </div>
             <div>
