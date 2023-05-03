@@ -44,6 +44,7 @@ const Register = () => {
         }
 
         // Photo URL validation;
+        // For Testing Correct URL Format: https://i.pinimg.com/736x/18/3c/e3/183ce3b7d49330b01544f3152d2298bd.jpg
         if (!/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/.test(photoURL)) {
             const errorMessage = "Url is not in the correct format..!"
             setUrlError(errorMessage);
