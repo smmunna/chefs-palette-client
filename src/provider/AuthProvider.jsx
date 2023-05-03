@@ -47,7 +47,7 @@ const AuthProvider = ({ children }) => {
 
 
     /*-----------------------------------------------------------
-                Github  Provider
+                Github Sign In Provider
     --------------------------------------------------------------*/
 
     const githubLogin = () => {
