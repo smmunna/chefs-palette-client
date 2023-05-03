@@ -9,6 +9,8 @@ const Register = () => {
     const { createUser, userUpdate } = useContext(AuthContext)
     const [error, setError] = useState(null)
     const [urlerror, setUrlError] = useState(null)
+    const [regerror, setRegError] = useState(null)
+
     const navigate = useNavigate()
 
 
@@ -64,6 +66,7 @@ const Register = () => {
             })
             .catch(regerror => {
                 const error = regerror.errorMessage;
+                setRegError(error)
             })
 
         // After registraation go to home;
@@ -75,6 +78,7 @@ const Register = () => {
             <div>
                 <form onSubmit={handleFormSubmit}>
                     <h3>Please Register as New</h3>
+                    <p>{regerror?'Error occurs in the registration':''}</p>
                     <hr />
                     <div className="mb-3">
                         <label for="exampleInputEmail1" className="form-label">Name</label>
