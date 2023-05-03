@@ -45,7 +45,7 @@ const Login = () => {
     }, [user])
 
     return (
-        <div className='login container mt-3 mt-md-1'>
+        <div className='login container mt-3 mt-md-0'>
             <div>
                 <form onSubmit={handleLoginForm}>
                     <h3>Please Login</h3>
