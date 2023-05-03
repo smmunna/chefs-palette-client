@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import LoginImage from '../../assets/images/login.jpg';
 import './Login.css';
 import Google from '../../assets/icons/google.png';
 import Github from '../../assets/icons/github.png';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../provider/AuthProvider';
 
 const Login = () => {
+    const{googleSignIn,user,error}=useContext(AuthContext);
+    console.log(user)
+
     return (
         <div className='login container'>
             <div>
@@ -29,7 +33,7 @@ const Login = () => {
                     <p>If you don't have account <Link to="/register" className='sublink'>Register Now</Link> or 👇 </p>
                 </div>
                 <div className='text-center'>
-                    <div className='google'><img src={Google} height={20} className='me-2' alt="" /><span>Sign in with Google</span></div>
+                    <div className='google'><img src={Google} height={20} className='me-2' alt="" /><span onClick={googleSignIn}>Sign in with Google</span></div>
                     <div className='github'><img src={Github} height={20} className='me-2' alt="" /><span>Sign in with Github</span></div>
                 </div>
             </div>
