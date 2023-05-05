@@ -30,16 +30,13 @@
 1. This page contains only Username, email , password and Photo URL
    >I have used the regular expression for validate the password and PhotoURL
    >Password contains at least two Uppercase and one special case and length not less than 6 character. (Example: !AB1234)
-   >PhotoUrl Validation, it must have to start with 'https://www.example.com?abcd.jpg'.You can use this example link. (Example: https://www.bssnews.net/assets/news_photos/2022/03/04/image-48342-1646396593.jpg)
+   >PhotoUrl , You can use this example link. (Example: https://www.bssnews.net/assets/news_photos/2022/03/04/image-48342-1646396593.jpg)
    
 ### Output
 ![image](https://user-images.githubusercontent.com/64527538/235987599-d38e9330-c8dc-4852-8fa9-aa8c44e7ebb3.png)
 
 ### Password Validation
 ![image](https://user-images.githubusercontent.com/64527538/235987875-adf38de3-7259-4696-8951-b765e90466a9.png)
-
-### Photo Validation
-![image](https://user-images.githubusercontent.com/64527538/235990728-0ec75fd8-96ec-4848-8e7e-6ce3f25d609a.png)
 
 ## After Login Header Format
 1. Right side of the Navbar it will show the User image and Logout Button
