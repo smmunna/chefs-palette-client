@@ -8,7 +8,6 @@ import { useNavigate } from 'react-router-dom';
 const Register = () => {
     const { createUser, userUpdate } = useContext(AuthContext)
     const [error, setError] = useState(null)
-    const [urlerror, setUrlError] = useState(null)
     const [regerror, setRegError] = useState(null)
 
     const navigate = useNavigate()
@@ -86,7 +85,6 @@ const Register = () => {
                     <div className="mb-3">
                         <label for="exampleInputEmail1" className="form-label">Photo URL</label>
                         <input type="text" name='photoURL' className="form-control" required />
-                        {urlerror ? <p className='text-danger mt-2'>{urlerror}</p> : ''}
                     </div>
                     <button type="submit" className="btn btn-success">Register</button>
                 </form>
