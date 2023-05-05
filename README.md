@@ -30,7 +30,7 @@
 1. This page contains only Username, email , password and Photo URL
    >I have used the regular expression for validate the password and PhotoURL
    >Password contains at least two Uppercase and one special case and length not less than 6 character. (Example: !AB1234)
-   >PhotoUrl Validation, it must have to start with 'https://www.example.com?abcd.jpg'.You can use this example link. (Example: https://i.pinimg.com/736x/18/3c/e3/183ce3b7d49330b01544f3152d2298bd.jpg)
+   >PhotoUrl Validation, it must have to start with 'https://www.example.com?abcd.jpg'.You can use this example link. (Example: https://www.bssnews.net/assets/news_photos/2022/03/04/image-48342-1646396593.jpg)
    
 ### Output
 ![image](https://user-images.githubusercontent.com/64527538/235987599-d38e9330-c8dc-4852-8fa9-aa8c44e7ebb3.png)
